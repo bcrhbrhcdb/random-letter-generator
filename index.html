@@ -1,23 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Home</title>
+    <title>Random Symbol Generator</title>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
-    <!--
-      Need a visual blank slate?
-      Remove all code in `styles.css`!
-    -->
     <link rel="stylesheet" href="styles.css" />
-    <script type="module" src="script.js"></script>
+    <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
   </head>
   <body>
-    <nav>
-      <a href="/" aria-current="page">Home</a>
-      <a href="/page2.html">Other page</a>
-    </nav>
     <main>
-      <h1>Home page</h1>
+      <h1>Random Symbol Generator</h1>
+      <p>Click the button below to generate a random symbol!</p>
+      <p>Generated Symbol is... <span id="generatedSymbol" class="text"></span></p>
+      <button id="generateSymbol" class="button">Click me to generate a symbol!</button>
+      <script type="module" src="script.js">
+        
+        const generateButton = document.getElementById("generateSymbol");
+        const generatedSymbol = document.getElementById("generatedSymbol");
+
+        generateButton.addEventListener('click', ()=>{
+          generatedSymbol.innerText = "Hi"
+        })
+      </script>
+
     </main>
+    <script type="module" src="./javascript/symbols.js"></script>
   </body>
 </html>
