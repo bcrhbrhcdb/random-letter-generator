@@ -19,7 +19,7 @@ function getMultipleRandomSymbols(count) {
         result += getRandomSymbol();
         // 20% chance to add a space between symbols
         if (Math.random() < 0.2 && i < count - 1) {
-            result += '';
+            result += '-';
         }
     }
     return result;
