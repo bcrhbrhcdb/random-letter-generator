@@ -12,30 +12,16 @@
       <div class="main">
       <h1>Random Symbol Generator</h1>
       <p>Click the button below to generate a random symbol(s)!</p>
-      <p>Generated Symbol(s) is... <span id="generatedSymbol" class="text"></span></p>
+      <p>Generated Symbol(s) is... <br><span id="generatedSymbol" class="text"></span></p>
+      <br>
       <button id="generateSymbol" class="button">Click me to generate a symbol!</button>
-      <select class="dropdown" id="moreSymbols">
-        <option value="">Choose how many symbols...</option>
-        <option value="2">2</option>
-        <option value="3">3</option>
-        <option value="4">4</option>
-        <option value="5">5</option>
-        <option value="6">6</option>
-        <option value="7">7</option>
-        <option value="8">8</option>
-        <option value="9">9</option>
-        <option value="10">10</option>
-        <option value="11">11</option>
-        <option value="12">12</option>
-        <option value="13">13</option>
-        <option value="14">14</option>
-        <option value="15">15</option>
-      </select>
+      <br>
+      <input type="number" id="symbolCount" min="2" max="1000" value="2" class="number-input">
+      <br>
       <button id="generateMultipleSymbols" class="button">Click me to generate multiple symbols!</button>
       </div>
     </main>
     <script type="module" src="./javascript/symbols.js"></script>
-    <script type="module" src="script.js">
-    </script>
+    <script type="module" src="script.js"></script>
   </body>
 </html>

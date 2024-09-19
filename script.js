@@ -5,29 +5,40 @@ import { symbols } from "./symbols.js";
 const generateButton = document.getElementById("generateSymbol");
 const generatedSymbol = document.getElementById("generatedSymbol");
 const multipleSymbolButton = document.getElementById("generateMultipleSymbols");
+const symbolCountInput = document.getElementById("symbolCount");
+
+// Function to get a random symbol
+function getRandomSymbol() {
+    return symbols[Math.floor(Math.random() * symbols.length)];
+}
+
+// Function to get multiple random symbols
+function getMultipleRandomSymbols(count) {
+    let result = '';
+    for (let i = 0; i < count; i++) {
+        result += getRandomSymbol();
+        // 20% chance to add a space between symbols
+        if (Math.random() < 0.2 && i < count - 1) {
+            result += ' ';
+        }
+    }
+    return result;
+}
 
 //generate random symbol
-generateButton.addEventListener('click', ()=>{
-    const randomIndex = Math.floor(Math.random() * symbols.length);
-    generatedSymbol.innerText = symbols[randomIndex];
-    console.log(generatedSymbol);
-})
+generateButton.addEventListener('click', () => {
+    generatedSymbol.innerText = getRandomSymbol();
+    console.log(generatedSymbol.innerText);
+});
 
 //multiple symbols
 multipleSymbolButton.addEventListener("click", () => {
-    const multipleSymbolSelect = document.getElementById("moreSymbols");
-    const numberOfSymbols = parseInt(multipleSymbolSelect.value);
-    let generatedSymbols = '';
+    const numberOfSymbols = parseInt(symbolCountInput.value);
 
-    if (isNaN(numberOfSymbols)) {
-        generatedSymbol.innerText = "Please select a number of symbols";
+    if (isNaN(numberOfSymbols) || numberOfSymbols < 2 || numberOfSymbols > 1000) {
+        generatedSymbol.innerText = "Please enter a number between 2 and 1000";
         return;
     }
 
-    for (let i = 0; i < numberOfSymbols; i++) {
-        const randomIndex = Math.floor(Math.random() * symbols.length);
-        generatedSymbols += symbols[randomIndex];
-    }
-
-    generatedSymbol.innerText = generatedSymbols;
-})
+    generatedSymbol.innerText = getMultipleRandomSymbols(numberOfSymbols);
+});
