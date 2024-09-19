@@ -35,8 +35,8 @@ generateButton.addEventListener('click', () => {
 multipleSymbolButton.addEventListener("click", () => {
     const numberOfSymbols = parseInt(symbolCountInput.value);
 
-    if (isNaN(numberOfSymbols) || numberOfSymbols < 2 || numberOfSymbols > 1000) {
-        generatedSymbol.innerText = "Please enter a number between 2 and 1000";
+    if (isNaN(numberOfSymbols) || numberOfSymbols < 2 || numberOfSymbols > 100000) {
+        generatedSymbol.innerText = "Please enter a number between 2 and 100000";
         return;
     }
 
