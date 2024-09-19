@@ -9,21 +9,29 @@
   </head>
   <body>
     <main>
+      <div class="main">
       <h1>Random Symbol Generator</h1>
-      <p>Click the button below to generate a random symbol!</p>
-      <p>Generated Symbol is... <span id="generatedSymbol" class="text"></span></p>
+      <p>Click the button below to generate a random symbol(s)!</p>
+      <p>Generated Symbol(s) is... <span id="generatedSymbol" class="text"></span></p>
       <button id="generateSymbol" class="button">Click me to generate a symbol!</button>
-      <script type="module" src="script.js">
-        
-        const generateButton = document.getElementById("generateSymbol");
-        const generatedSymbol = document.getElementById("generatedSymbol");
+      <select class="dropdown" id="moreSymbols">
+        <option value="0">Choose how many symbols...</option>
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+        <option value="6">6</option>
+        <option value="7">7</option>
+        <option value="8">8</option>
+        <option value="9">9</option>
 
-        generateButton.addEventListener('click', ()=>{
-          generatedSymbol.innerText = "Hi"
-        })
-      </script>
-
+      </select>
+      <button id="generateMultipleSymbols" class="button">Click me to generate multiple symbols!</button>
+      </div>
     </main>
     <script type="module" src="./javascript/symbols.js"></script>
+    <script type="module" src="script.js">
+    </script>
   </body>
 </html>

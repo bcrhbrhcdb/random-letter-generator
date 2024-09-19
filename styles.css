@@ -5,8 +5,9 @@
 body {
   margin: 0;
   font-family: system-ui, sans-serif;
-  color: black;
-  background-color: white;
+  color: rgb(58, 54, 54);
+  background-color: #CEE5F2;
+  font-size: 25px;
 }
 
 nav {
@@ -39,8 +40,23 @@ nav a[aria-current='page'] {
 main {
   padding: 1rem;
 }
-
+.main{
+  text-align: center;
+  background-color: #ACCBE1;
+  padding: 20px;
+  border-radius: 20px;
+  margin: 5px;
+}
 h1 {
   font-weight: bold;
   font-size: 1.5rem;
+  color: rgb(58, 54, 54)
+}
+button, .dropdown{
+  border-radius: 10px;
+  font-size: 30px;
+  background-color: #637081;
+  color: #CEE5F2;
+  padding: 5px;
+  margin: 5px;
 }
